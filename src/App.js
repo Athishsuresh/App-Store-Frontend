@@ -1,7 +1,7 @@
 import { AppContext } from "./Contexts/AppContext";
 import {BrowserRouter, Route, Routes} from "react-router-dom"
 import Layout from "./Components/Layouts/Layout"
-import Cards from "./Components/Cards";
+// import Cards from "./Components/Cards";
 import { useState } from "react";
 
 function App() {

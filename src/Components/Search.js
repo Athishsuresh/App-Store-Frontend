@@ -1,5 +1,4 @@
 import React, { useState, useContext } from 'react';
-import logo from "../Images/playstore.png";
 import "./Styles/Search.css";
 import { AppContext } from '../Contexts/AppContext';
 
@@ -17,8 +16,7 @@ const Search = () => {
     <div className='search-container'>
       <div className='search'>
         <div className="search-logo-heading">
-          <img src={logo} alt="playstore" width={60} height={60} />
-          <h1>Play Store</h1>
+          <h1>App Store</h1>
         </div>
         <div className="search-box">
           <input
@@ -30,7 +28,7 @@ const Search = () => {
         </div>
         <div className="feedbuttons" >
           <p onClick={() => handleCategory("All")}>All</p>
-          <p onClick={() => handleCategory("socialmedia")}>Social</p>
+          <p onClick={() => handleCategory("Social")}>Social</p>
           <p onClick={() => handleCategory("games")}>Games</p>
           <p onClick={() => handleCategory("news")}>News</p>
           <p onClick={() => handleCategory("food")}>Food</p>

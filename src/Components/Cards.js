@@ -8,42 +8,38 @@ const Cards = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    let isMounted = true;
     async function fetchData() {
       try {
-        let url = `http://localhost:3000/apps`;
+        let img = `http://localhost:3000/app`;
         if (category && category !== 'All') {
-          url += `?category=${category}`;
+          img += `?category=${category}`;
         }
 
-        const fetchApps = await axios.get(url);
-        if (isMounted) {
+        const fetchApps = await axios.get(img);
+        
           setData(fetchApps.data);
           console.log(fetchApps.data);
           
-        }
+      
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.log('Error fetching data:');
       }
     }
 
     fetchData();
 
-    return () => {
-      isMounted = false;
-    };
+   
   }, [category]);
 
   const searchdata = data.filter(
-    (app) => app.name.startsWith(globalSearchData) || app.name.startsWith(globalSearchData.toUpperCase())
-  );
+    (app) => app.name.toLowerCase().includes(globalSearchData.toLowerCase()));
 
   return (
     <div className='cards-container'>
       <div className='cards-section'>
         {searchdata.map((app) => (
           <div className="cards" key={app.id}>
-            <img src={app.image} alt={app.name} width={100} height={100} />
+            <img src={app.img} alt={app.name} width={180} height={180} />
             <p>{app.name}</p>
           </div>
         ))}

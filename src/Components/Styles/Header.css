@@ -1,11 +1,7 @@
 *{
     margin: 0;
 }
-.heading-logo{
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+
 .header-container{
     display: flex;
     justify-content: space-between;
@@ -14,7 +10,7 @@
     padding-top: 10px;
     align-items: center;
     height: 50px;
-    background-color: rgb(99, 234, 99);
+    background-color: rgb(255, 255, 255);
 }
 .switch {
     position: relative;
