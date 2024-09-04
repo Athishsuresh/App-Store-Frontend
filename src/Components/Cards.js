@@ -10,7 +10,7 @@ const Cards = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        let img = `http://localhost:3000/app`;
+        let img = `https://app-store-backend.vercel.app/app`;
         if (category && category !== 'All') {
           img += `?category=${category}`;
         }
